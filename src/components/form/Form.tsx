@@ -29,12 +29,9 @@ export const Form: FunctionComponent = () => {
   const [isLoading, setLoading] = useState<boolean>(false);
   const [zipCode, setZipCode] = useState<string>("");
 
-  const handleChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setZipCode(e.target.value);
-    },
-    [zipCode]
-  );
+  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setZipCode(e.target.value);
+  }, []);
 
   const handleSubmit = useCallback(
     async (e: React.FormEvent) => {
@@ -56,7 +53,7 @@ export const Form: FunctionComponent = () => {
           setLoading(false);
         });
     },
-    [address, zipCode]
+    [zipCode]
   );
 
   const disabledButton = useMemo(() => {
