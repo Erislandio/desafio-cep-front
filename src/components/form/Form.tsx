@@ -37,7 +37,8 @@ export const Form: FunctionComponent = () => {
     async (e: React.FormEvent) => {
       e.preventDefault();
 
-      const zip = zipCode.replace(/\-/, "");
+      // eslint-disable-next-line
+      const zip = zipCode.replace(/\-/g, ""); 
 
       setLoading(true);
 
@@ -96,6 +97,7 @@ export const Form: FunctionComponent = () => {
         <a
           href="http://www.buscacep.correios.com.br/sistemas/buscacep/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Não sei meu cep
         </a>
